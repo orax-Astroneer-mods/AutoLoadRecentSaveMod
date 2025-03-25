@@ -20,7 +20,7 @@ local function isFileExists(filename)
     end
 end
 
----@return LoadSaveMod_Options
+---@return AutoLoadRecentSaveMod_Options
 local function loadOptions()
     local file = format([[%s\options.lua]], currentModDirectory)
 

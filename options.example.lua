@@ -2,7 +2,7 @@
 LOG_LEVEL = "INFO" ---@type _LogLevel
 MIN_LEVEL_OF_FATAL_ERROR = "ERROR" ---@type _LogLevel
 
----@type LoadSaveMod_Options
+---@type AutoLoadRecentSaveMod_Options
 return {
     directory_SaveGames = [[%LocalAppData%\Astro\Saved\SaveGames]],
     filter = "*.savegame",
