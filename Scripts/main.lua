@@ -211,20 +211,22 @@ RegisterConsoleCommandHandler(options.commands.quit_game.name,
         return true
     end)
 
--- Auto load latest game save.
-if not UEHelpers.GetPlayerController():IsValid() then
-    local preId, postId
-    ---@diagnostic disable-next-line: redundant-parameter
-    preId, postId = RegisterHook(options.hook, function() end, function()
-        IsLoadScreenLoaded = true
+ExecuteInGameThread(function()
+    -- Auto load latest game save.
+    if not UEHelpers.GetPlayerController():IsValid() then
+        local preId, postId
+        ---@diagnostic disable-next-line: redundant-parameter
+        preId, postId = RegisterHook(options.hook, function() end, function()
+            IsLoadScreenLoaded = true
 
-        if preId then
-            -- Unhook once the function has been called.
-            UnregisterHook(options.hook, preId, postId)
-        end
+            if preId then
+                -- Unhook once the function has been called.
+                UnregisterHook(options.hook, preId, postId)
+            end
 
-        local saveName = loadLatestSave()
+            local saveName = loadLatestSave()
 
-        log.info("Loading... %q.", saveName)
-    end)
-end
+            log.info("Loading... %q.", saveName)
+        end)
+    end
+end)
