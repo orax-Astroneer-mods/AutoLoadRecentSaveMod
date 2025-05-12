@@ -92,13 +92,6 @@ local function loadLatestSave()
     end
 end
 
----@param returnToTitleScreen boolean
-local function quitGame(returnToTitleScreen)
-    local AstroGameMenuStatics = StaticFindObject("/Script/Astro.Default__AstroGameMenuStatics")
-    assert(AstroGameMenuStatics:IsValid()) ---@cast AstroGameMenuStatics UAstroGameMenuStatics
-    AstroGameMenuStatics:GameMenuForceQuitGame(UEHelpers:GetWorld(), returnToTitleScreen, false, false)
-end
-
 ---Command: getsavename
 RegisterConsoleCommandHandler(options.commands.get_latest_game_save_name.name,
     ---@param fullCommand string
@@ -175,38 +168,6 @@ RegisterConsoleCommandHandler(options.commands.open_SaveGames_directory.name,
         outputDevice:Log(msg)
 
         openSaveGamesDirectory()
-
-        return true
-    end)
-
----Command: quit
-RegisterConsoleCommandHandler(options.commands.quit.name,
-    ---@param fullCommand string
-    ---@param parameters table
-    ---@param outputDevice FOutputDevice
-    ---@return boolean
-    function(fullCommand, parameters, outputDevice)
-        local msg = "Quit without saving. Return to title screen."
-        log.info(msg)
-        outputDevice:Log(msg)
-
-        quitGame(true)
-
-        return true
-    end)
-
----Command: quitgame
-RegisterConsoleCommandHandler(options.commands.quit_game.name,
-    ---@param fullCommand string
-    ---@param parameters table
-    ---@param outputDevice FOutputDevice
-    ---@return boolean
-    function(fullCommand, parameters, outputDevice)
-        local msg = "Quit game without saving."
-        log.info(msg)
-        outputDevice:Log(msg)
-
-        quitGame(false)
 
         return true
     end)
