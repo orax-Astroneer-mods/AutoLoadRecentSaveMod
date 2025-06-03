@@ -6,7 +6,7 @@ local logging = require("lib.lua-mods-libs.logging")
 
 local format = string.format
 
-local currentModDirectory = debug.getinfo(1, "S").source:match("@?(.+\\Mods\\[^\\]+)")
+local currentModDirectory = debug.getinfo(1, "S").source:match("@?(.+)\\[Ss]cripts\\")
 
 ---@param filename string
 ---@return boolean
