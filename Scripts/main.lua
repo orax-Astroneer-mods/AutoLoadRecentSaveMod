@@ -2,11 +2,11 @@
 ---@field Log function
 
 local UEHelpers = require("UEHelpers")
-local logging = require("lib.lua-mods-libs.logging")
+local logging = require("Scripts.lib.lua-mods-libs.logging")
 
 local format = string.format
 
-local currentModDirectory = debug.getinfo(1, "S").source:match("@?(.+)\\[Ss]cripts\\")
+local currentModDirectory = debug.getinfo(1, "S").source:gsub("\\", "/"):match("@?(.+)/[Ss]cripts/")
 
 ---@param filename string
 ---@return boolean
