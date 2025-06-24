@@ -2,7 +2,7 @@
 ---@field Log function
 
 local UEHelpers = require("UEHelpers")
-local logging = require("Scripts.lib.lua-mods-libs.logging")
+local logging = require("lib.lua-mods-libs.logging")
 
 local format = string.format
 
