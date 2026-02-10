@@ -1,0 +1,13 @@
+{
+  "mods": {
+    "AutoLoadRecentSaveMod": {
+      "latest_version": "0.1.5",
+      "versions": {
+        "0.1.5": {
+          "download_url": "https://github.com/orax-Astroneer-mods/AutoLoadRecentSaveMod/releases/download/v0.1.5/000-AutoLoadRecentSaveMod-0.1.5_P.pak",
+          "filename": "000-AutoLoadRecentSaveMod-0.1.5_P.pak"
+        }
+      }
+    }
+  }
+}
