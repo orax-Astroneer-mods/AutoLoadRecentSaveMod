@@ -1,7 +1,6 @@
 {
     "$schema": "./resources/schema.json",
     "author": "orax",
-    "canonical_name": "AutoLoadRecentSave",
     "description": "Automatically loads your recent save after launching the game.",
     "homepage": "https://www.nexusmods.com/profile/0R4X/mods?gameId=1955",
     "name": "Auto Load Recent Save"
